@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const SECTIONS = [
   {
     id: "consultoria",
     badge: "Consultoria",
     icon: "",
+    image: "/imagem-consultoria.png",
     title: "Sua estratégia de IA merece sair do slide e entrar em operação",
     description:
       "Antes de construir para você, construímos para nós. Mergulhamos nos seus processos, localizamos onde a IA gera valor de verdade e entregamos soluções prontas para escalar o seu negócio. Sem enrolação, sem teoria. Só resultado.",
@@ -17,6 +19,7 @@ const SECTIONS = [
     id: "produtos",
     badge: "Produtos",
     icon: "",
+    image: null,
     title: "Ferramentas que precisávamos, não encontramos. Então, criamos",
     description:
       "Desenvolvemos soluções para resolver nossos próprios desafios. Esse processo nos deu experiência prática que usamos para ensinar vibe coding e para construir aplicações reais para nossos clientes.",
@@ -28,6 +31,7 @@ const SECTIONS = [
     id: "educacao",
     badge: "Educação",
     icon: "",
+    image: null,
     title: "Chega de usar IA de forma amadora. Aprenda a usar como quem realmente domina.",
     description:
       "Fique à frente do mercado aprendendo na prática com quem usa e constrói com IA todos os dias. Sem jargão, sem teoria vazia.",
@@ -93,21 +97,39 @@ export default function Features() {
                 filter: "blur(40px)",
               }} />
 
-              {/* Icon */}
-              <div style={{
-                width: 56,
-                height: 56,
-                borderRadius: "14px",
-                background: section.accent,
-                border: `1px solid ${section.accentBorder}`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "24px",
-                flexShrink: 0,
-              }}>
-                {section.icon}
-              </div>
+              {/* Icon / Image */}
+              {section.image ? (
+                <div style={{
+                  width: 56,
+                  height: 56,
+                  borderRadius: "14px",
+                  overflow: "hidden",
+                  flexShrink: 0,
+                  position: "relative",
+                }}>
+                  <Image
+                    src={section.image}
+                    alt={section.badge}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              ) : (
+                <div style={{
+                  width: 56,
+                  height: 56,
+                  borderRadius: "14px",
+                  background: section.accent,
+                  border: `1px solid ${section.accentBorder}`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "24px",
+                  flexShrink: 0,
+                }}>
+                  {section.icon}
+                </div>
+              )}
 
               {/* Content */}
               <div style={{ display: "flex", flexDirection: "column", gap: "16px", position: "relative", zIndex: 1 }}>
