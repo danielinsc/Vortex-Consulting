@@ -45,7 +45,7 @@ export default function TrustSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} style={{ background: "#fff", padding: "120px 0", position: "relative", overflow: "hidden" }}>
+    <section ref={sectionRef} style={{ background: "#fff", padding: "200px 0", position: "relative", overflow: "hidden" }}>
 
       <div className="section-container" style={{ position: "relative", zIndex: 1 }}>
         {/* Headline */}
