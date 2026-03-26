@@ -45,24 +45,19 @@ export default function TrustSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} style={{ background: "#000", padding: "120px 0", position: "relative", overflow: "hidden" }}>
-      {/* Decorative background glow */}
-      <div className="trust-glow" style={{
-        position: "absolute",
-        top: "-20%",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "800px",
-        height: "400px",
-        background: "radial-gradient(ellipse, rgba(153, 153, 153, 0.04) 0%, transparent 70%)",
-        pointerEvents: "none",
-      }} />
+    <section ref={sectionRef} style={{ background: "#fff", padding: "120px 0", position: "relative", overflow: "hidden" }}>
 
       <div className="section-container" style={{ position: "relative", zIndex: 1 }}>
         {/* Headline */}
         <h2
-          className="trust-headline h2-section"
+          className="trust-headline"
           style={{
+            fontFamily: "Geist, sans-serif",
+            fontWeight: 300,
+            fontSize: "40px",
+            lineHeight: 1.1,
+            letterSpacing: "-0.04em",
+            color: "#111",
             textAlign: "center",
             marginBottom: "56px",
             maxWidth: "700px",
@@ -91,19 +86,19 @@ export default function TrustSection() {
                 alignItems: "center",
                 gap: "10px",
                 padding: "14px 24px",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid #222",
+                background: "rgba(0,0,0,0.03)",
+                border: "1px solid rgba(0,0,0,0.1)",
                 borderRadius: "62px",
                 fontFamily: "Inter, sans-serif",
                 fontSize: "14px",
                 fontWeight: 400,
-                color: "rgba(184,184,184,0.9)",
+                color: "rgba(60,60,60,0.9)",
                 letterSpacing: "-0.01em",
                 transition: "all 0.4s cubic-bezier(0.12, 0.23, 0.28, 0.97)",
                 cursor: "default",
               }}
             >
-              <span style={{ color: "#999999", fontSize: "14px" }}>&#10003;</span>
+              <span style={{ color: "#333", fontSize: "14px" }}>&#10003;</span>
               {service}
             </span>
           ))}

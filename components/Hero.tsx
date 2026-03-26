@@ -4,27 +4,6 @@ import Image from "next/image";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const grainRef = useRef<HTMLCanvasElement>(null);
-
-  // Generate grain texture on canvas
-  useEffect(() => {
-    const canvas = grainRef.current;
-    if (!canvas) return;
-    const ctx2d = canvas.getContext("2d");
-    if (!ctx2d) return;
-    canvas.width = 512;
-    canvas.height = 512;
-    const imageData = ctx2d.createImageData(512, 512);
-    const data = imageData.data;
-    for (let i = 0; i < data.length; i += 4) {
-      const v = Math.random() * 255;
-      data[i] = v;
-      data[i + 1] = v;
-      data[i + 2] = v;
-      data[i + 3] = 255;
-    }
-    ctx2d.putImageData(imageData, 0, 0);
-  }, []);
 
   useEffect(() => {
     let ctx: any;
@@ -83,26 +62,15 @@ export default function Hero() {
           src="https://framerusercontent.com/images/YiSZBoFuDbDBmZ3kiLxAO6ApU0.jpg"
           alt="Vortex Consulting"
           fill
+          sizes="(min-width: 1200px) 65vw, 100vw"
+          quality={100}
+          unoptimized
           style={{ objectFit: "cover", objectPosition: "60% 20%" }}
           priority
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, #000 0%, #000 5%, transparent 50%)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent 60%, rgba(0,0,0,0.3) 100%)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 60%, #000 100%)" }} />
-        {/* Film grain overlay — only on the photo area */}
-        <canvas
-          ref={grainRef}
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-            zIndex: 2,
-            opacity: 0.14,
-            mixBlendMode: "overlay",
-          }}
-        />
       </div>
 
       {/* Floating glow orb */}
