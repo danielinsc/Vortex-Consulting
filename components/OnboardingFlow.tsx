@@ -84,12 +84,12 @@ const PROVIDERS = [
     id: "http",
     name: "HTTP / Custom",
     label: "Qualquer provider via API",
-    color: "#61aefa",
+    color: "#999999",
     placeholder: "https://api.seumodelo.com/v1",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="4" y="8" width="20" height="12" rx="2" stroke="#61aefa" strokeWidth="1.5" />
-        <path d="M9 14h10M14 11v6" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" />
+        <rect x="4" y="8" width="20" height="12" rx="2" stroke="#999999" strokeWidth="1.5" />
+        <path d="M9 14h10M14 11v6" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -116,7 +116,7 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
             height: "2px",
             flex: 1,
             borderRadius: "2px",
-            background: i <= step ? "#61aefa" : "rgba(255,255,255,0.1)",
+            background: i <= step ? "#999999" : "rgba(255,255,255,0.1)",
             transition: "background 0.4s ease",
           }}
         />
@@ -131,7 +131,7 @@ function StepLabel({ step, total }: { step: number; total: number }) {
     <p style={{
       fontFamily: "Geist Mono, monospace",
       fontSize: "11px",
-      color: "rgba(97,174,250,0.7)",
+      color: "rgba(153,153,153,0.7)",
       letterSpacing: "0.06em",
       textTransform: "uppercase",
     }}>
@@ -178,7 +178,7 @@ function GlassInput({
         style={{
           width: "100%",
           background: "rgba(255,255,255,0.04)",
-          border: `1px solid ${focused ? "rgba(97,174,250,0.4)" : "#222"}`,
+          border: `1px solid ${focused ? "rgba(153, 153, 153, 0.4)" : "#222"}`,
           borderRadius: "12px",
           padding: "14px 18px",
           fontFamily: "Inter, sans-serif",
@@ -271,8 +271,8 @@ function StepTemplate({
               onClick={() => setSelected(t.id)}
               style={{
                 width: "100%",
-                background: isSelected ? "rgba(97,174,250,0.06)" : "rgba(255,255,255,0.02)",
-                border: `1px solid ${isSelected ? "rgba(97,174,250,0.35)" : "#1e1e1e"}`,
+                background: isSelected ? "rgba(153, 153, 153, 0.06)" : "rgba(255,255,255,0.02)",
+                border: `1px solid ${isSelected ? "rgba(153,153,153,0.35)" : "#1e1e1e"}`,
                 borderRadius: "14px",
                 padding: "18px 20px",
                 cursor: "pointer",
@@ -299,10 +299,10 @@ function StepTemplate({
                       <span key={a} style={{
                         fontFamily: "Geist Mono, monospace",
                         fontSize: "10px",
-                        color: isSelected ? "rgba(97,174,250,0.7)" : "rgba(117,117,117,0.6)",
-                        background: isSelected ? "rgba(97,174,250,0.08)" : "rgba(255,255,255,0.04)",
+                        color: isSelected ? "rgba(153,153,153,0.7)" : "rgba(117,117,117,0.6)",
+                        background: isSelected ? "rgba(153, 153, 153, 0.08)" : "rgba(255,255,255,0.04)",
                         border: "1px solid",
-                        borderColor: isSelected ? "rgba(97,174,250,0.2)" : "#1a1a1a",
+                        borderColor: isSelected ? "rgba(153, 153, 153, 0.2)" : "#1a1a1a",
                         borderRadius: "4px",
                         padding: "2px 7px",
                         transition: "all 0.2s",
@@ -318,15 +318,15 @@ function StepTemplate({
                   width: 20,
                   height: 20,
                   borderRadius: "50%",
-                  background: "rgba(97,174,250,0.15)",
-                  border: "1px solid rgba(97,174,250,0.4)",
+                  background: "rgba(153, 153, 153, 0.15)",
+                  border: "1px solid rgba(153, 153, 153, 0.4)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
                 }}>
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                    <path d="M2 5L4 7L8 3" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2 5L4 7L8 3" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               )}
@@ -470,8 +470,8 @@ function StepAgent({
               key={a.id}
               onClick={() => setSelected(a.id)}
               style={{
-                background: isSel ? "rgba(97,174,250,0.06)" : "rgba(255,255,255,0.02)",
-                border: `1px solid ${isSel ? "rgba(97,174,250,0.35)" : "#1e1e1e"}`,
+                background: isSel ? "rgba(153, 153, 153, 0.06)" : "rgba(255,255,255,0.02)",
+                border: `1px solid ${isSel ? "rgba(153,153,153,0.35)" : "#1e1e1e"}`,
                 borderRadius: "14px",
                 padding: "18px 16px",
                 cursor: "pointer",
@@ -487,7 +487,7 @@ function StepAgent({
                 <span style={{ fontSize: "20px", lineHeight: 1 }}>{a.icon}</span>
                 {isSel && (
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 7L5.5 10L11.5 4" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2.5 7L5.5 10L11.5 4" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
               </div>
@@ -495,7 +495,7 @@ function StepAgent({
                 <div style={{ fontFamily: "Geist, sans-serif", fontWeight: 300, fontSize: "14px", color: "#fff", letterSpacing: "-0.02em", marginBottom: "2px" }}>
                   {a.role}
                 </div>
-                <div style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: isSel ? "rgba(97,174,250,0.6)" : "rgba(117,117,117,0.5)", letterSpacing: "0.02em" }}>
+                <div style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: isSel ? "rgba(153,153,153,0.6)" : "rgba(117,117,117,0.5)", letterSpacing: "0.02em" }}>
                   {a.dept}
                 </div>
                 <div style={{ fontFamily: "Inter, sans-serif", fontSize: "11px", color: "rgba(117,117,117,0.6)", marginTop: "6px", lineHeight: 1.4 }}>
@@ -543,20 +543,20 @@ function StepSuccess({ companyName, agentId }: { companyName: string; agentId: s
           position: "absolute",
           inset: -12,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(97,174,250,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(153,153,153,0.12) 0%, transparent 70%)",
         }} />
         <div style={{
           width: "100%",
           height: "100%",
           borderRadius: "50%",
-          background: "rgba(97,174,250,0.08)",
-          border: "1px solid rgba(97,174,250,0.3)",
+          background: "rgba(153, 153, 153, 0.08)",
+          border: "1px solid rgba(153, 153, 153, 0.3)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}>
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <path d="M10 20L17 27L30 13" stroke="#61aefa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M10 20L17 27L30 13" stroke="#999999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
@@ -709,7 +709,7 @@ export default function OnboardingFlow() {
         transform: "translateX(-50%)",
         width: "600px",
         height: "400px",
-        background: "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(97,174,250,0.06) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(153, 153, 153, 0.06) 0%, transparent 70%)",
         pointerEvents: "none",
       }} />
 
@@ -806,9 +806,9 @@ export default function OnboardingFlow() {
                 width: "100%",
                 justifyContent: "center",
                 padding: "14px 24px",
-                background: canAdvance() ? "rgba(97,174,250,0.12)" : "rgba(255,255,255,0.03)",
-                border: `1px solid ${canAdvance() ? "rgba(97,174,250,0.3)" : "#1a1a1a"}`,
-                color: canAdvance() ? "#61aefa" : "rgba(117,117,117,0.5)",
+                background: canAdvance() ? "rgba(153,153,153,0.12)" : "rgba(255,255,255,0.03)",
+                border: `1px solid ${canAdvance() ? "rgba(153, 153, 153, 0.3)" : "#1a1a1a"}`,
+                color: canAdvance() ? "#999999" : "rgba(117,117,117,0.5)",
                 fontSize: "15px",
                 cursor: canAdvance() ? "pointer" : "not-allowed",
                 transition: "all 0.25s ease",
@@ -827,9 +827,9 @@ export default function OnboardingFlow() {
                 width: "100%",
                 justifyContent: "center",
                 padding: "14px 24px",
-                background: "rgba(97,174,250,0.12)",
-                border: "1px solid rgba(97,174,250,0.3)",
-                color: "#61aefa",
+                background: "rgba(153,153,153,0.12)",
+                border: "1px solid rgba(153, 153, 153, 0.3)",
+                color: "#999999",
                 fontSize: "15px",
               }}
             >

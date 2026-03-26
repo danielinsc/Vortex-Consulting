@@ -39,7 +39,7 @@ const SIDEBAR_AGENTS = [
 
 const STATUS_DOT: Record<string, string> = {
   active: "#22c55e",
-  working: "#61aefa",
+  working: "#999999",
   idle: "#eab308",
   error: "#ef4444",
 };
@@ -63,7 +63,7 @@ function AppSidebar() {
         padding: "0 12px",
         gap: "8px",
       }}>
-        <div style={{ width: 12, height: 12, borderRadius: "3px", background: "#61aefa", flexShrink: 0 }} />
+        <div style={{ width: 12, height: 12, borderRadius: "3px", background: "#999999", flexShrink: 0 }} />
         <span style={{ fontFamily: "Geist, sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(184,184,184,0.9)", letterSpacing: "-0.02em", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           Acme Corp
         </span>
@@ -114,7 +114,7 @@ function AppSidebar() {
 
 const METRICS = [
   { label: "Agentes", value: "7", sub: "3 em execução", accent: "#22c55e" },
-  { label: "Tarefas abertas", value: "23", sub: "↑ 4 hoje", accent: "#61aefa" },
+  { label: "Tarefas abertas", value: "23", sub: "↑ 4 hoje", accent: "#999999" },
   { label: "Custo este mês", value: "R$847", sub: "66% do budget", accent: "#f59e0b" },
   { label: "Em execução", value: "3", sub: "ciclo ativo", accent: "#a78bfa" },
 ];
@@ -164,7 +164,7 @@ function AgentsPanel() {
         <span style={{ fontFamily: "Inter, sans-serif", fontSize: "10px", fontWeight: 500, color: "rgba(117,117,117,0.7)", letterSpacing: "0.04em", textTransform: "uppercase" }}>
           Agentes Ativos
         </span>
-        <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: "rgba(97,174,250,0.5)" }}>3 / 7</span>
+        <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: "rgba(153, 153, 153, 0.5)" }}>3 / 7</span>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         {ACTIVE_AGENTS.map((a, i) => (
@@ -195,11 +195,11 @@ function AgentsPanel() {
 // ─── Activity Feed ────────────────────────────────────────────────────────────
 
 const ACTIVITY = [
-  { actor: "CTO", verb: "checkout de", target: "ENG-042", time: "agora", dot: "#61aefa" },
+  { actor: "CTO", verb: "checkout de", target: "ENG-042", time: "agora", dot: "#999999" },
   { actor: "Board", verb: "aprovou", target: "Deploy v2.1", time: "2min", dot: "#22c55e" },
-  { actor: "CMO", verb: "criou", target: "MKT-018", time: "5min", dot: "#61aefa" },
+  { actor: "CMO", verb: "criou", target: "MKT-018", time: "5min", dot: "#999999" },
   { actor: "CFO", verb: "registrou custo", target: "R$284", time: "11min", dot: "#f59e0b" },
-  { actor: "CTO", verb: "comentou em", target: "ENG-039", time: "18min", dot: "#61aefa" },
+  { actor: "CTO", verb: "comentou em", target: "ENG-039", time: "18min", dot: "#999999" },
   { actor: "CMO", verb: "solicitou aprovação", target: "Budget Ads", time: "24min", dot: "#ef4444" },
 ];
 
@@ -283,7 +283,7 @@ export default function AppPreview() {
             fontWeight: 500,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "rgba(97,174,250,0.6)",
+            color: "rgba(153,153,153,0.6)",
             marginBottom: "16px",
           }}>
             O App
@@ -405,7 +405,7 @@ export default function AppPreview() {
               letterSpacing: "-0.01em",
             }}>
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                <path d="M1.5 5L4 7.5L8.5 2.5" stroke="rgba(97,174,250,0.5)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M1.5 5L4 7.5L8.5 2.5" stroke="rgba(153, 153, 153, 0.5)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {chip}
             </span>

@@ -114,8 +114,8 @@ export default function FAQ() {
                       width: 32,
                       height: 32,
                       borderRadius: "50%",
-                      background: isOpen ? "rgba(97,174,250,0.1)" : "rgba(255,255,255,0.06)",
-                      border: isOpen ? "1px solid rgba(97,174,250,0.3)" : "1px solid #222",
+                      background: isOpen ? "rgba(153, 153, 153, 0.1)" : "rgba(255,255,255,0.06)",
+                      border: isOpen ? "1px solid rgba(153, 153, 153, 0.3)" : "1px solid #222",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -124,7 +124,7 @@ export default function FAQ() {
                     }}
                   >
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M6 2V10M2 6H10" stroke={isOpen ? "#61aefa" : "white"} strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M6 2V10M2 6H10" stroke={isOpen ? "#999999" : "white"} strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   </span>
                 </button>

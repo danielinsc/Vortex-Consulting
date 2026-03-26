@@ -10,8 +10,8 @@ const SECTIONS = [
     description:
       "Antes de construir para você, construímos para nós. Mergulhamos nos seus processos, localizamos onde a IA gera valor de verdade e entregamos soluções prontas para escalar o seu negócio. Sem enrolação, sem teoria. Só resultado.",
     cta: { label: "Ver Consultoria", href: "#consultoria-detail" },
-    accent: "rgba(97,174,250,0.08)",
-    accentBorder: "rgba(97,174,250,0.2)",
+    accent: "rgba(153, 153, 153, 0.08)",
+    accentBorder: "rgba(153, 153, 153, 0.2)",
   },
   {
     id: "produtos",
@@ -118,7 +118,7 @@ export default function Features() {
                   padding: "4px 14px",
                   fontSize: "12px",
                   fontFamily: "Geist Mono, monospace",
-                  color: "rgba(97,174,250,0.8)",
+                  color: "rgba(153, 153, 153, 0.8)",
                   letterSpacing: "0.04em",
                   alignSelf: "flex-start",
                 }}>
@@ -154,7 +154,7 @@ export default function Features() {
                     style={{
                       fontFamily: "Inter, sans-serif",
                       fontSize: "14px",
-                      color: "#61aefa",
+                      color: "#999999",
                       textDecoration: "none",
                       display: "inline-flex",
                       alignItems: "center",

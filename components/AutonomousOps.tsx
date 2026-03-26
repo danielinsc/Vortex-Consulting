@@ -17,8 +17,8 @@ function HeartbeatNode({ icon, label, sublabel, active, index }: {
           width: 56,
           height: 56,
           borderRadius: "14px",
-          background: active ? "rgba(97,174,250,0.12)" : "rgba(255,255,255,0.04)",
-          border: active ? "1px solid rgba(97,174,250,0.35)" : "1px solid #222",
+          background: active ? "rgba(153,153,153,0.12)" : "rgba(255,255,255,0.04)",
+          border: active ? "1px solid rgba(153,153,153,0.35)" : "1px solid #222",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -51,7 +51,7 @@ function HeartbeatNode({ icon, label, sublabel, active, index }: {
 
 function Arrow() {
   return (
-    <div style={{ display: "flex", alignItems: "center", color: "rgba(97,174,250,0.25)", fontSize: "18px", flexShrink: 0, paddingBottom: "28px" }}>
+    <div style={{ display: "flex", alignItems: "center", color: "rgba(153,153,153,0.25)", fontSize: "18px", flexShrink: 0, paddingBottom: "28px" }}>
       →
     </div>
   );
@@ -84,7 +84,7 @@ function CostDashboard() {
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 5px #22c55e" }} />
           <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(117,117,117,0.6)", letterSpacing: "0.04em" }}>HEARTBEAT EM EXECUÇÃO</span>
         </div>
-        <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: "rgba(97,174,250,0.5)" }}>ciclo #2.847</span>
+        <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: "rgba(153, 153, 153, 0.5)" }}>ciclo #2.847</span>
       </div>
 
       {/* Agent rows */}
@@ -100,14 +100,14 @@ function CostDashboard() {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{
                 width: 6, height: 6, borderRadius: "50%", flexShrink: 0,
-                background: a.status === "running" ? "#61aefa" : a.status === "waiting" ? "#f59e0b" : "#333",
-                boxShadow: a.status === "running" ? "0 0 5px rgba(97,174,250,0.5)" : "none",
+                background: a.status === "running" ? "#999999" : a.status === "waiting" ? "#f59e0b" : "#333",
+                boxShadow: a.status === "running" ? "0 0 5px rgba(153, 153, 153, 0.5)" : "none",
               }} />
               <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(117,117,117,0.8)" }}>{a.name}</span>
               <span style={{ fontFamily: "Inter, sans-serif", fontSize: "10px", color: "rgba(117,117,117,0.5)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "160px" }}>{a.task}</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
-              <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "8px", color: "rgba(97,174,250,0.4)", padding: "1px 5px", background: "rgba(97,174,250,0.06)", borderRadius: "3px" }}>{a.model}</span>
+              <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "8px", color: "rgba(153, 153, 153, 0.4)", padding: "1px 5px", background: "rgba(153, 153, 153, 0.06)", borderRadius: "3px" }}>{a.model}</span>
               <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: a.pct > 90 ? "#ef4444" : a.pct > 70 ? "#f59e0b" : "rgba(117,117,117,0.5)" }}>{a.pct}%</span>
             </div>
           </div>
@@ -115,7 +115,7 @@ function CostDashboard() {
             <div style={{
               height: "100%",
               width: `${a.pct}%`,
-              background: a.pct > 90 ? "#ef4444" : a.pct > 70 ? "#f59e0b" : "rgba(97,174,250,0.6)",
+              background: a.pct > 90 ? "#ef4444" : a.pct > 70 ? "#f59e0b" : "rgba(153,153,153,0.6)",
               borderRadius: "3px",
             }} />
           </div>
@@ -199,14 +199,14 @@ export default function AutonomousOps() {
         <div style={{ textAlign: "center", marginBottom: "64px" }}>
           <div style={{
             display: "inline-flex", alignItems: "center", gap: "8px",
-            background: "rgba(97,174,250,0.06)",
-            border: "1px solid rgba(97,174,250,0.15)",
+            background: "rgba(153, 153, 153, 0.06)",
+            border: "1px solid rgba(153, 153, 153, 0.15)",
             borderRadius: "62px",
             padding: "6px 16px",
             marginBottom: "24px",
           }}>
             <span className="badge-dot-pulse" />
-            <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "11px", color: "rgba(97,174,250,0.8)", letterSpacing: "0.04em" }}>
+            <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "11px", color: "rgba(153, 153, 153, 0.8)", letterSpacing: "0.04em" }}>
               AUTONOMOUS OPS · 24/7
             </span>
           </div>
@@ -220,7 +220,7 @@ export default function AutonomousOps() {
 
         {/* Heartbeat cycle */}
         <div className="ops-heartbeat" style={{ marginBottom: "64px" }}>
-          <p style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(97,174,250,0.5)", letterSpacing: "0.06em", textAlign: "center", marginBottom: "32px" }}>
+          <p style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(153, 153, 153, 0.5)", letterSpacing: "0.06em", textAlign: "center", marginBottom: "32px" }}>
             HEARTBEAT LOOP · CICLO DE ORQUESTRAÇÃO
           </p>
           <div style={{
@@ -247,9 +247,9 @@ export default function AutonomousOps() {
             <span style={{
               fontFamily: "Geist Mono, monospace",
               fontSize: "10px",
-              color: "rgba(97,174,250,0.4)",
-              background: "rgba(97,174,250,0.05)",
-              border: "1px solid rgba(97,174,250,0.1)",
+              color: "rgba(153, 153, 153, 0.4)",
+              background: "rgba(153,153,153,0.05)",
+              border: "1px solid rgba(153, 153, 153, 0.1)",
               borderRadius: "62px",
               padding: "5px 16px",
             }}>

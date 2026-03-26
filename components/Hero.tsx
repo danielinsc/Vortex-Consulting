@@ -113,7 +113,7 @@ export default function Hero() {
         width: "400px",
         height: "400px",
         borderRadius: "50%",
-        background: "radial-gradient(ellipse, rgba(97,174,250,0.08) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse, rgba(153, 153, 153, 0.08) 0%, transparent 70%)",
         pointerEvents: "none",
         filter: "blur(60px)",
       }} />
@@ -207,7 +207,7 @@ export default function Hero() {
         left: 0,
         right: 0,
         height: "1px",
-        background: "linear-gradient(90deg, transparent 0%, rgba(97,174,250,0.3) 50%, transparent 100%)",
+        background: "linear-gradient(90deg, transparent 0%, rgba(153, 153, 153, 0.3) 50%, transparent 100%)",
       }} />
     </section>
   );

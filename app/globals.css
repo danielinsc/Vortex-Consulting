@@ -123,14 +123,14 @@ body {
 
 .service-chip:hover {
   background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(97, 174, 250, 0.3) !important;
+  border-color: rgba(153, 153, 153, 0.3) !important;
   color: #fff !important;
 }
 
 /* ─── FEAT CARD HOVER ───────────────────────────── */
 
 .feat-card:hover {
-  border-color: rgba(97, 174, 250, 0.2) !important;
+  border-color: rgba(153, 153, 153, 0.2) !important;
 }
 
 /* ─── PULSING ORB (from Framer @keyframes pulsing-orb) ── */
@@ -148,7 +148,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px solid rgba(97, 174, 250, 0.5);
+  border: 1px solid rgba(153, 153, 153, 0.5);
   animation: pulsing-orb 2s cubic-bezier(0.12, 0.23, 0.5, 1) infinite;
   pointer-events: none;
 }

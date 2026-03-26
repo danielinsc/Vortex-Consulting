@@ -56,8 +56,8 @@ export default function Security() {
                   width: 48,
                   height: 48,
                   borderRadius: "12px",
-                  background: "rgba(97,174,250,0.1)",
-                  border: "1px solid rgba(97,174,250,0.2)",
+                  background: "rgba(153, 153, 153, 0.1)",
+                  border: "1px solid rgba(153, 153, 153, 0.2)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -65,8 +65,8 @@ export default function Security() {
                 }}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3L4 7V12C4 16.4 7.6 20.5 12 21C16.4 20.5 20 16.4 20 12V7L12 3Z" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9 12L11 14L15 10" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 3L4 7V12C4 16.4 7.6 20.5 12 21C16.4 20.5 20 16.4 20 12V7L12 3Z" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 12L11 14L15 10" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -96,7 +96,7 @@ export default function Security() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                <span style={{ color: "#61aefa", marginRight: "8px" }}>✓</span>
+                <span style={{ color: "#999999", marginRight: "8px" }}>✓</span>
                 {feat}
               </span>
             ))}

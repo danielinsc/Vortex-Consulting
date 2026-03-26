@@ -8,7 +8,7 @@ const PILLARS = [
     icon: "",
     description:
       "Examinamos seus processos em profundidade para localizar onde a IA pode gerar retorno concreto. Priorizamos iniciativas por potencial de ROI e viabilidade de execução, entregando um roadmap claro que elimina achismos e transforma incerteza em decisão estratégica.",
-    color: "#61aefa",
+    color: "#999999",
   },
   {
     number: "02",
@@ -108,7 +108,7 @@ export default function HowItWorks() {
         left: "0",
         width: "100%",
         height: "1px",
-        background: "linear-gradient(90deg, transparent 0%, rgba(97,174,250,0.15) 50%, transparent 100%)",
+        background: "linear-gradient(90deg, transparent 0%, rgba(153, 153, 153, 0.15) 50%, transparent 100%)",
         pointerEvents: "none",
       }} />
 
@@ -123,7 +123,7 @@ export default function HowItWorks() {
               <span style={{
                 fontFamily: "Geist Mono, monospace",
                 fontSize: "12px",
-                color: "rgba(97,174,250,0.6)",
+                color: "rgba(153,153,153,0.6)",
                 letterSpacing: "0.06em",
               }}>
                 PÁGINA DE CONSULTORIA
@@ -149,7 +149,7 @@ export default function HowItWorks() {
             <div style={{
               height: "1px",
               width: "40px",
-              background: "linear-gradient(90deg, #61aefa, transparent)",
+              background: "linear-gradient(90deg, #999999, transparent)",
               flexShrink: 0,
             }} />
             <p style={{
@@ -252,7 +252,7 @@ export default function HowItWorks() {
               <span style={{
                 fontFamily: "Geist Mono, monospace",
                 fontSize: "12px",
-                color: "rgba(97,174,250,0.6)",
+                color: "rgba(153,153,153,0.6)",
                 letterSpacing: "0.06em",
               }}>
                 PÁGINA DE EDUCAÇÃO
@@ -285,7 +285,7 @@ export default function HowItWorks() {
                   right: "-40px",
                   width: "200px",
                   height: "200px",
-                  background: "radial-gradient(ellipse, rgba(97,174,250,0.04) 0%, transparent 70%)",
+                  background: "radial-gradient(ellipse, rgba(153, 153, 153, 0.04) 0%, transparent 70%)",
                   pointerEvents: "none",
                 }} />
 
@@ -293,13 +293,13 @@ export default function HowItWorks() {
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <span style={{ fontSize: "28px" }}>{course.icon}</span>
                   <span style={{
-                    background: "rgba(97,174,250,0.08)",
-                    border: "1px solid rgba(97,174,250,0.2)",
+                    background: "rgba(153, 153, 153, 0.08)",
+                    border: "1px solid rgba(153, 153, 153, 0.2)",
                     borderRadius: "62px",
                     padding: "6px 16px",
                     fontSize: "13px",
                     fontFamily: "Geist Mono, monospace",
-                    color: "rgba(97,174,250,0.8)",
+                    color: "rgba(153, 153, 153, 0.8)",
                     letterSpacing: "0.04em",
                   }}>
                     {course.badge}
@@ -324,9 +324,9 @@ export default function HowItWorks() {
                     <span key={i} style={{
                       fontFamily: "Geist Mono, monospace",
                       fontSize: "10px",
-                      color: "rgba(97,174,250,0.6)",
-                      background: "rgba(97,174,250,0.06)",
-                      border: "1px solid rgba(97,174,250,0.12)",
+                      color: "rgba(153,153,153,0.6)",
+                      background: "rgba(153, 153, 153, 0.06)",
+                      border: "1px solid rgba(153,153,153,0.12)",
                       borderRadius: "4px",
                       padding: "4px 10px",
                     }}>

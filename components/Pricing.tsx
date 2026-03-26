@@ -136,9 +136,9 @@ export default function Pricing() {
               Anual
               <span
                 style={{
-                  background: "rgba(97,174,250,0.15)",
-                  border: "1px solid rgba(97,174,250,0.3)",
-                  color: "#61aefa",
+                  background: "rgba(153, 153, 153, 0.15)",
+                  border: "1px solid rgba(153, 153, 153, 0.3)",
+                  color: "#999999",
                   fontSize: "11px",
                   padding: "2px 8px",
                   borderRadius: "62px",
@@ -159,7 +159,7 @@ export default function Pricing() {
               className="plan-card"
               style={{
                 background: plan.popular ? "#080808" : "transparent",
-                border: plan.popular ? "1px solid #61aefa" : "1px solid #222",
+                border: plan.popular ? "1px solid #999999" : "1px solid #222",
                 borderRadius: "16px",
                 padding: "32px",
                 display: "flex",
@@ -175,13 +175,13 @@ export default function Pricing() {
                     top: "-12px",
                     left: "50%",
                     transform: "translateX(-50%)",
-                    background: "rgba(97,174,250,0.15)",
-                    border: "1px solid rgba(97,174,250,0.3)",
+                    background: "rgba(153, 153, 153, 0.15)",
+                    border: "1px solid rgba(153, 153, 153, 0.3)",
                     borderRadius: "62px",
                     padding: "4px 16px",
                     fontSize: "12px",
                     fontFamily: "Inter, sans-serif",
-                    color: "#61aefa",
+                    color: "#999999",
                     fontWeight: 500,
                     whiteSpace: "nowrap",
                   }}
@@ -224,9 +224,9 @@ export default function Pricing() {
                   display: "flex",
                   justifyContent: "center",
                   padding: "14px 24px",
-                  background: plan.popular ? "rgba(97,174,250,0.15)" : "rgba(255,255,255,0.06)",
-                  border: plan.popular ? "1px solid rgba(97,174,250,0.3)" : "1px solid transparent",
-                  color: plan.popular ? "#61aefa" : "#fff",
+                  background: plan.popular ? "rgba(153, 153, 153, 0.15)" : "rgba(255,255,255,0.06)",
+                  border: plan.popular ? "1px solid rgba(153, 153, 153, 0.3)" : "1px solid transparent",
+                  color: plan.popular ? "#999999" : "#fff",
                 }}
               >
                 {plan.cta}
@@ -239,7 +239,7 @@ export default function Pricing() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   {plan.features.map((feat, fi) => (
                     <div key={fi} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                      <span style={{ color: "#61aefa", fontSize: "14px", flexShrink: 0, marginTop: "1px" }}>✓</span>
+                      <span style={{ color: "#999999", fontSize: "14px", flexShrink: 0, marginTop: "1px" }}>✓</span>
                       <span style={{ fontFamily: "Inter, sans-serif", fontSize: "14px", color: "rgba(184,184,184,0.9)", lineHeight: 1.4 }}>
                         {feat}
                       </span>

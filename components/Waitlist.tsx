@@ -14,7 +14,7 @@ const PERKS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path d="M11 2L13.5 8H20L14.5 12L16.5 18L11 14.5L5.5 18L7.5 12L2 8H8.5L11 2Z" stroke="#61aefa" strokeWidth="1.5" strokeLinejoin="round"/>
+        <path d="M11 2L13.5 8H20L14.5 12L16.5 18L11 14.5L5.5 18L7.5 12L2 8H8.5L11 2Z" stroke="#999999" strokeWidth="1.5" strokeLinejoin="round"/>
       </svg>
     ),
     title: "Acesso prioritário ao ClipMart",
@@ -23,8 +23,8 @@ const PERKS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <rect x="3" y="3" width="16" height="16" rx="3" stroke="#61aefa" strokeWidth="1.5"/>
-        <path d="M7 11L10 14L15 8" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="3" y="3" width="16" height="16" rx="3" stroke="#999999" strokeWidth="1.5"/>
+        <path d="M7 11L10 14L15 8" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     title: "3 meses do Starter grátis",
@@ -33,8 +33,8 @@ const PERKS = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <circle cx="11" cy="11" r="8" stroke="#61aefa" strokeWidth="1.5"/>
-        <path d="M11 7V11L14 13" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="11" cy="11" r="8" stroke="#999999" strokeWidth="1.5"/>
+        <path d="M11 7V11L14 13" stroke="#999999" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
     title: "Feedback direto com o time",
@@ -131,7 +131,7 @@ export default function Waitlist() {
             transform: "translateX(-50%)",
             width: "800px",
             height: "500px",
-            background: "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(97,174,250,0.08) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(153, 153, 153, 0.08) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -169,8 +169,8 @@ export default function Waitlist() {
               display: "inline-flex",
               alignItems: "center",
               gap: "10px",
-              background: "rgba(97,174,250,0.08)",
-              border: "1px solid rgba(97,174,250,0.2)",
+              background: "rgba(153, 153, 153, 0.08)",
+              border: "1px solid rgba(153, 153, 153, 0.2)",
               borderRadius: "62px",
               padding: "8px 18px",
             }}
@@ -182,7 +182,7 @@ export default function Waitlist() {
                   position: "absolute",
                   inset: 0,
                   borderRadius: "50%",
-                  background: "#61aefa",
+                  background: "#999999",
                 }}
               />
               <span className="badge-dot-pulse" />
@@ -191,7 +191,7 @@ export default function Waitlist() {
               fontFamily: "Inter, sans-serif",
               fontSize: "13px",
               fontWeight: 500,
-              color: "#61aefa",
+              color: "#999999",
               letterSpacing: "-0.01em",
             }}>
               Acesso antecipado · vagas limitadas
@@ -242,7 +242,7 @@ export default function Waitlist() {
                   gap: "8px",
                   width: "100%",
                   background: "rgba(255,255,255,0.04)",
-                  border: `1px solid ${focused ? "rgba(97,174,250,0.4)" : "#222"}`,
+                  border: `1px solid ${focused ? "rgba(153, 153, 153, 0.4)" : "#222"}`,
                   borderRadius: "62px",
                   padding: "6px 6px 6px 24px",
                   transition: "border-color 0.25s ease",
@@ -274,9 +274,9 @@ export default function Waitlist() {
                   style={{
                     padding: "12px 24px",
                     fontSize: "14px",
-                    background: loading ? "rgba(97,174,250,0.1)" : "rgba(97,174,250,0.15)",
-                    border: "1px solid rgba(97,174,250,0.3)",
-                    color: "#61aefa",
+                    background: loading ? "rgba(153, 153, 153, 0.1)" : "rgba(153, 153, 153, 0.15)",
+                    border: "1px solid rgba(153, 153, 153, 0.3)",
+                    color: "#999999",
                     flexShrink: 0,
                     opacity: loading ? 0.7 : 1,
                     transition: "all 0.25s ease",
@@ -285,8 +285,8 @@ export default function Waitlist() {
                   {loading ? (
                     <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ animation: "spin 0.8s linear infinite" }}>
-                        <circle cx="7" cy="7" r="5" stroke="rgba(97,174,250,0.4)" strokeWidth="1.5"/>
-                        <path d="M7 2A5 5 0 0 1 12 7" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round"/>
+                        <circle cx="7" cy="7" r="5" stroke="rgba(153, 153, 153, 0.4)" strokeWidth="1.5"/>
+                        <path d="M7 2A5 5 0 0 1 12 7" stroke="#999999" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                       Entrando...
                     </span>
@@ -308,8 +308,8 @@ export default function Waitlist() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "12px",
-                  background: "rgba(97,174,250,0.08)",
-                  border: "1px solid rgba(97,174,250,0.25)",
+                  background: "rgba(153, 153, 153, 0.08)",
+                  border: "1px solid rgba(153,153,153,0.25)",
                   borderRadius: "62px",
                   padding: "18px 32px",
                 }}
@@ -318,15 +318,15 @@ export default function Waitlist() {
                   width: 24,
                   height: 24,
                   borderRadius: "50%",
-                  background: "rgba(97,174,250,0.15)",
-                  border: "1px solid rgba(97,174,250,0.3)",
+                  background: "rgba(153, 153, 153, 0.15)",
+                  border: "1px solid rgba(153, 153, 153, 0.3)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
                 }}>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2 6L5 9L10 3" stroke="#61aefa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 6L5 9L10 3" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
                 <p style={{
@@ -336,7 +336,7 @@ export default function Waitlist() {
                   letterSpacing: "-0.01em",
                 }}>
                   Você está na lista!{" "}
-                  <span style={{ color: "#61aefa" }}>Avisaremos quando abrir.</span>
+                  <span style={{ color: "#999999" }}>Avisaremos quando abrir.</span>
                 </p>
               </div>
             )}
@@ -453,8 +453,8 @@ export default function Waitlist() {
                     width: 48,
                     height: 48,
                     borderRadius: "12px",
-                    background: "rgba(97,174,250,0.08)",
-                    border: "1px solid rgba(97,174,250,0.15)",
+                    background: "rgba(153, 153, 153, 0.08)",
+                    border: "1px solid rgba(153, 153, 153, 0.15)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -495,7 +495,7 @@ export default function Waitlist() {
                   <span style={{
                     fontFamily: "Geist Mono, monospace",
                     fontSize: "11px",
-                    color: "rgba(97,174,250,0.5)",
+                    color: "rgba(153, 153, 153, 0.5)",
                     letterSpacing: "0.04em",
                   }}>
                     {String(idx + 1).padStart(2, "0")}
@@ -516,7 +516,7 @@ export default function Waitlist() {
               gap: "8px",
             }}
           >
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(97,174,250,0.5)", display: "inline-block" }} />
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(153, 153, 153, 0.5)", display: "inline-block" }} />
             <p style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "13px",

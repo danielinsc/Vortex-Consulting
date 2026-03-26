@@ -15,7 +15,7 @@ function TechVisual() {
         <div key={a.label} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span style={{
             width: 6, height: 6, borderRadius: "50%", flexShrink: 0,
-            background: a.status === "working" ? "#61aefa" : a.status === "active" ? "#22c55e" : "#eab308",
+            background: a.status === "working" ? "#999999" : a.status === "active" ? "#22c55e" : "#eab308",
           }} />
           <span style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(184,184,184,0.7)", minWidth: 56, letterSpacing: "0.02em" }}>{a.label}</span>
           <span style={{ fontFamily: "Inter, sans-serif", fontSize: "10px", color: "rgba(117,117,117,0.6)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.task}</span>
@@ -31,7 +31,7 @@ function FinanceVisual() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
         {[
           { label: "Receita MRR", value: "R$48.200", color: "#22c55e" },
-          { label: "Custo Agentes", value: "R$1.240", color: "#61aefa" },
+          { label: "Custo Agentes", value: "R$1.240", color: "#999999" },
           { label: "Budget restante", value: "74%", color: "#f59e0b" },
           { label: "Burn rate", value: "R$312/dia", color: "#a78bfa" },
         ].map((m) => (
@@ -46,7 +46,7 @@ function FinanceVisual() {
           </div>
         ))}
       </div>
-      <p style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: "rgba(97,174,250,0.4)", textAlign: "center" }}>
+      <p style={{ fontFamily: "Geist Mono, monospace", fontSize: "9px", color: "rgba(153, 153, 153, 0.4)", textAlign: "center" }}>
         CFO · Analista · Contador · em execução
       </p>
     </div>
@@ -89,7 +89,7 @@ function CustomerVisual() {
     { id: "SUP-042", title: "Dúvida sobre plano Pro", priority: "media", status: "resolvido" },
     { id: "SUP-043", title: "Integração com API", priority: "baixa", status: "aberto" },
   ];
-  const priorityColor: Record<string, string> = { alta: "#ef4444", media: "#f59e0b", baixa: "#61aefa" };
+  const priorityColor: Record<string, string> = { alta: "#ef4444", media: "#f59e0b", baixa: "#999999" };
   return (
     <div style={{ height: "200px", background: "#080808", padding: "20px", display: "flex", flexDirection: "column", gap: "8px", justifyContent: "center" }}>
       {tickets.map((t) => (
@@ -135,9 +135,9 @@ function OpsVisual() {
             fontSize: "9px",
             padding: "2px 7px",
             borderRadius: "62px",
-            background: e.status === "concluído" ? "rgba(34,197,94,0.1)" : e.status === "em andamento" ? "rgba(97,174,250,0.1)" : "rgba(255,255,255,0.04)",
-            border: `1px solid ${e.status === "concluído" ? "rgba(34,197,94,0.2)" : e.status === "em andamento" ? "rgba(97,174,250,0.2)" : "#1a1a1a"}`,
-            color: e.status === "concluído" ? "#22c55e" : e.status === "em andamento" ? "#61aefa" : "rgba(117,117,117,0.6)",
+            background: e.status === "concluído" ? "rgba(34,197,94,0.1)" : e.status === "em andamento" ? "rgba(153, 153, 153, 0.1)" : "rgba(255,255,255,0.04)",
+            border: `1px solid ${e.status === "concluído" ? "rgba(34,197,94,0.2)" : e.status === "em andamento" ? "rgba(153, 153, 153, 0.2)" : "#1a1a1a"}`,
+            color: e.status === "concluído" ? "#22c55e" : e.status === "em andamento" ? "#999999" : "rgba(117,117,117,0.6)",
             flexShrink: 0,
           }}>
             {e.status}
@@ -152,7 +152,7 @@ function SalesVisual() {
   return (
     <div style={{ height: "200px", background: "#080808", padding: "20px", display: "flex", flexDirection: "column", gap: "8px", justifyContent: "center" }}>
       {[
-        { stage: "Prospecção", count: 24, color: "#61aefa" },
+        { stage: "Prospecção", count: 24, color: "#999999" },
         { stage: "Qualificação", count: 12, color: "#a78bfa" },
         { stage: "Proposta", count: 5, color: "#f59e0b" },
         { stage: "Fechamento", count: 2, color: "#22c55e" },
@@ -239,9 +239,9 @@ export default function UseCases() {
                     <span key={a} style={{
                       fontFamily: "Geist Mono, monospace",
                       fontSize: "9px",
-                      color: "rgba(97,174,250,0.6)",
-                      background: "rgba(97,174,250,0.06)",
-                      border: "1px solid rgba(97,174,250,0.15)",
+                      color: "rgba(153,153,153,0.6)",
+                      background: "rgba(153, 153, 153, 0.06)",
+                      border: "1px solid rgba(153, 153, 153, 0.15)",
                       borderRadius: "4px",
                       padding: "2px 7px",
                     }}>

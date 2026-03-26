@@ -64,7 +64,7 @@ export default function Benefits() {
         transform: "translate(-50%, -50%)",
         width: "600px",
         height: "400px",
-        background: "radial-gradient(ellipse, rgba(97,174,250,0.04) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse, rgba(153, 153, 153, 0.04) 0%, transparent 70%)",
         pointerEvents: "none",
       }} />
 
@@ -91,7 +91,7 @@ export default function Benefits() {
           <span className="about-badge" style={{
             fontFamily: "Geist Mono, monospace",
             fontSize: "12px",
-            color: "rgba(97,174,250,0.6)",
+            color: "rgba(153,153,153,0.6)",
             letterSpacing: "0.06em",
           }}>
             QUEM SOMOS
@@ -136,7 +136,7 @@ export default function Benefits() {
                 color: "rgba(184,184,184,0.8)",
                 letterSpacing: "-0.01em",
               }}>
-                <span style={{ color: "#61aefa" }}>&#10003;</span>
+                <span style={{ color: "#999999" }}>&#10003;</span>
                 {h}
               </span>
             ))}

@@ -54,7 +54,7 @@ export default function TrustSection() {
         transform: "translateX(-50%)",
         width: "800px",
         height: "400px",
-        background: "radial-gradient(ellipse, rgba(97,174,250,0.04) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse, rgba(153, 153, 153, 0.04) 0%, transparent 70%)",
         pointerEvents: "none",
       }} />
 
@@ -103,7 +103,7 @@ export default function TrustSection() {
                 cursor: "default",
               }}
             >
-              <span style={{ color: "#61aefa", fontSize: "14px" }}>&#10003;</span>
+              <span style={{ color: "#999999", fontSize: "14px" }}>&#10003;</span>
               {service}
             </span>
           ))}

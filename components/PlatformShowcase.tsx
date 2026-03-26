@@ -88,10 +88,10 @@ const TABS = [
     visual: {
       type: "finance",
       bars: [
-        { label: "CTO", pct: 72, color: "#61aefa" },
-        { label: "CMO", pct: 45, color: "#61aefa" },
+        { label: "CTO", pct: 72, color: "#999999" },
+        { label: "CMO", pct: 45, color: "#999999" },
         { label: "CFO", pct: 88, color: "#f59e0b" },
-        { label: "Full-Stack", pct: 30, color: "#61aefa" },
+        { label: "Full-Stack", pct: 30, color: "#999999" },
         { label: "Ads Mgr", pct: 95, color: "#ef4444" },
       ],
     },
@@ -165,7 +165,7 @@ const TABS = [
 const STATUS_COLORS: Record<string, string> = {
   active: "#22c55e",
   idle: "#eab308",
-  working: "#61aefa",
+  working: "#999999",
   error: "#ef4444",
 };
 
@@ -212,7 +212,7 @@ function OrgVisual({ nodes }: { nodes: Array<{ label: string; status: string; x:
 
 function OfficeVisual({ rooms }: { rooms: string[] }) {
   const deptColors: Record<string, string> = {
-    Executive: "#61aefa",
+    Executive: "#999999",
     Tech: "#22c55e",
     Marketing: "#f59e0b",
     Finance: "#a78bfa",
@@ -293,8 +293,8 @@ function AuditVisual({ events }: { events: Array<{ type: string; label: string; 
             width: 20,
             height: 20,
             borderRadius: "50%",
-            background: e.type === "approval" ? "rgba(97,174,250,0.1)" : "rgba(255,255,255,0.04)",
-            border: `1px solid ${e.type === "approval" ? "rgba(97,174,250,0.3)" : "#222"}`,
+            background: e.type === "approval" ? "rgba(153, 153, 153, 0.1)" : "rgba(255,255,255,0.04)",
+            border: `1px solid ${e.type === "approval" ? "rgba(153, 153, 153, 0.3)" : "#222"}`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -303,7 +303,7 @@ function AuditVisual({ events }: { events: Array<{ type: string; label: string; 
           }}>
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
               {e.type === "approval"
-                ? <path d="M1.5 4L3 5.5L6.5 2.5" stroke="#61aefa" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                ? <path d="M1.5 4L3 5.5L6.5 2.5" stroke="#999999" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                 : <circle cx="4" cy="4" r="1.5" fill="rgba(117,117,117,0.5)" />
               }
             </svg>
@@ -340,7 +340,7 @@ function ClipMartVisual({ cards }: { cards: Array<{ role: string; dept: string; 
             <div style={{ fontFamily: "Geist, sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(184,184,184,0.9)", letterSpacing: "-0.02em" }}>
               {c.role}
             </div>
-            <div style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(97,174,250,0.5)", marginTop: "2px" }}>
+            <div style={{ fontFamily: "Geist Mono, monospace", fontSize: "10px", color: "rgba(153, 153, 153, 0.5)", marginTop: "2px" }}>
               {c.dept}
             </div>
           </div>
@@ -425,7 +425,7 @@ export default function PlatformShowcase() {
             fontWeight: 500,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "rgba(97,174,250,0.6)",
+            color: "rgba(153,153,153,0.6)",
             marginBottom: "16px",
           }}>
             Plataforma Completa
@@ -459,9 +459,9 @@ export default function PlatformShowcase() {
                   gap: "7px",
                   padding: "9px 16px",
                   borderRadius: "62px",
-                  border: `1px solid ${isActive ? "rgba(97,174,250,0.35)" : "#222"}`,
-                  background: isActive ? "rgba(97,174,250,0.08)" : "rgba(255,255,255,0.03)",
-                  color: isActive ? "#61aefa" : "rgba(117,117,117,0.8)",
+                  border: `1px solid ${isActive ? "rgba(153,153,153,0.35)" : "#222"}`,
+                  background: isActive ? "rgba(153, 153, 153, 0.08)" : "rgba(255,255,255,0.03)",
+                  color: isActive ? "#999999" : "rgba(117,117,117,0.8)",
                   fontFamily: "Inter, sans-serif",
                   fontSize: "13px",
                   fontWeight: 400,
@@ -500,11 +500,11 @@ export default function PlatformShowcase() {
             }}>
               {/* Tab badge */}
               <div style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ color: "#61aefa", opacity: 0.8 }}>{tab.icon}</span>
+                <span style={{ color: "#999999", opacity: 0.8 }}>{tab.icon}</span>
                 <span style={{
                   fontFamily: "Geist Mono, monospace",
                   fontSize: "11px",
-                  color: "rgba(97,174,250,0.6)",
+                  color: "rgba(153,153,153,0.6)",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                 }}>
@@ -543,8 +543,8 @@ export default function PlatformShowcase() {
                       width: 16,
                       height: 16,
                       borderRadius: "50%",
-                      background: "rgba(97,174,250,0.1)",
-                      border: "1px solid rgba(97,174,250,0.2)",
+                      background: "rgba(153, 153, 153, 0.1)",
+                      border: "1px solid rgba(153, 153, 153, 0.2)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -552,7 +552,7 @@ export default function PlatformShowcase() {
                       marginTop: "1px",
                     }}>
                       <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                        <path d="M1.5 4L3 5.5L6.5 2.5" stroke="#61aefa" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M1.5 4L3 5.5L6.5 2.5" stroke="#999999" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
                     <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: "rgba(184,184,184,0.85)", lineHeight: 1.5, letterSpacing: "-0.01em" }}>
@@ -578,7 +578,7 @@ export default function PlatformShowcase() {
                 right: "-40px",
                 width: "200px",
                 height: "200px",
-                background: "radial-gradient(ellipse, rgba(97,174,250,0.05) 0%, transparent 70%)",
+                background: "radial-gradient(ellipse, rgba(153,153,153,0.05) 0%, transparent 70%)",
                 pointerEvents: "none",
               }} />
               <TabVisual tab={tab} />

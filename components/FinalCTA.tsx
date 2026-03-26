@@ -79,7 +79,7 @@ export default function FinalCTA() {
             transform: "translateX(-50%)",
             width: "400px",
             height: "300px",
-            background: "radial-gradient(ellipse, rgba(97,174,250,0.06) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse, rgba(153, 153, 153, 0.06) 0%, transparent 70%)",
             pointerEvents: "none",
           }} />
 
@@ -96,7 +96,7 @@ export default function FinalCTA() {
             zIndex: 1,
           }}>
             Empresas que implementam IA estão obtendo um retorno médio de{" "}
-            <span style={{ color: "#61aefa", fontWeight: 400 }}>3,7x</span>
+            <span style={{ color: "#999999", fontWeight: 400 }}>3,7x</span>
             {" "}para cada $1 investido.
           </p>
           <p style={{
@@ -107,7 +107,7 @@ export default function FinalCTA() {
             position: "relative",
             zIndex: 1,
           }}>
-            Nascemos para colocar sua empresa nesse grupo. <span style={{ color: "#61aefa" }}>Comece agora &rarr;</span>
+            Nascemos para colocar sua empresa nesse grupo. <span style={{ color: "#999999" }}>Comece agora &rarr;</span>
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function FinalCTA() {
             border: "1px solid #1a1a1a",
             borderRadius: "24px",
             padding: "96px 48px",
-            background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(97,174,250,0.06) 0%, transparent 70%)",
+            background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(153, 153, 153, 0.06) 0%, transparent 70%)",
             position: "relative",
             overflow: "hidden",
           }}
@@ -157,7 +157,7 @@ export default function FinalCTA() {
               maxWidth: "640px",
             }}>
               Você perdeu a internet.<br />Você perdeu o mobile.<br />
-              <span style={{ color: "#61aefa" }}>Não perca a IA.</span>
+              <span style={{ color: "#999999" }}>Não perca a IA.</span>
             </h2>
 
             <p className="body-m" style={{ maxWidth: "480px" }}>
