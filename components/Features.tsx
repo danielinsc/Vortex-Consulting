@@ -100,18 +100,19 @@ export default function Features() {
               {/* Icon / Image */}
               {section.image ? (
                 <div style={{
-                  width: 56,
-                  height: 56,
-                  borderRadius: "14px",
+                  width: 64,
+                  height: 64,
+                  borderRadius: "16px",
                   overflow: "hidden",
                   flexShrink: 0,
-                  position: "relative",
                 }}>
                   <Image
                     src={section.image}
                     alt={section.badge}
-                    fill
-                    style={{ objectFit: "cover" }}
+                    width={128}
+                    height={128}
+                    unoptimized
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>
               ) : (
