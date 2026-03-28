@@ -33,10 +33,21 @@ const TRANSITION = "all 0.4s cubic-bezier(0.12, 0.23, 0.28, 0.97)";
 
 export default function ProjectCalculator() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [serviceType, setServiceType] = useState<ServiceType>("consultoria");
+  const [selectedServices, setSelectedServices] = useState<ServiceType[]>(["consultoria"]);
   const [complexity, setComplexity] = useState<Complexity>("simples");
   const [timeline, setTimeline] = useState<Timeline>("regular");
   const [addons, setAddons] = useState<string[]>([]);
+
+  const toggleService = (value: ServiceType) => {
+    setSelectedServices((prev) => {
+      if (prev.includes(value)) {
+        // Don't allow deselecting if it's the only one
+        if (prev.length === 1) return prev;
+        return prev.filter((s) => s !== value);
+      }
+      return [...prev, value];
+    });
+  };
 
   const toggleAddon = (id: string) => {
     setAddons((prev) => prev.includes(id) ? prev.filter((a) => a !== id) : [...prev, id]);
@@ -48,7 +59,10 @@ export default function ProjectCalculator() {
       desenvolvimento: { simples: 8000, medio: 20000, complexo: 45000 },
       automacao:       { simples: 5000, medio: 12000, complexo: 28000 },
     };
-    let total = basePrices[serviceType][complexity];
+    let total = 0;
+    selectedServices.forEach((service) => {
+      total += basePrices[service][complexity];
+    });
     addons.forEach((id) => {
       const addon = ADDONS.find((a) => a.id === id);
       if (addon) total += addon.price;
@@ -148,28 +162,36 @@ export default function ProjectCalculator() {
               padding: "48px",
               borderRight: "2px solid #222",
             }}>
-              {/* Service Type */}
+              {/* Service Type — multiple selection */}
               <div style={{ marginBottom: "40px" }}>
                 <h3 style={{
                   fontFamily: "Geist, sans-serif", fontWeight: 300, fontSize: "20px",
-                  lineHeight: 1.3, letterSpacing: "-0.03em", color: "#fff", marginBottom: "16px",
+                  lineHeight: 1.3, letterSpacing: "-0.03em", color: "#fff", marginBottom: "6px",
                 }}>
                   Que tipo de serviço você precisa?
                 </h3>
+                <p style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: "rgba(117,117,117,0.9)", marginBottom: "16px", letterSpacing: "-0.01em" }}>
+                  Selecione um ou mais serviços
+                </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                  {SERVICE_OPTIONS.map((opt) => (
-                    <label key={opt.value} style={radioStyle(serviceType === opt.value)} onClick={() => setServiceType(opt.value)}>
-                      <span style={{
-                        width: 18, height: 18, borderRadius: "50%",
-                        border: serviceType === opt.value ? "5px solid #999" : "2px solid #555",
-                        background: "transparent", flexShrink: 0, transition: TRANSITION,
-                      }} />
-                      <div>
-                        <span style={{ fontFamily: "Inter, sans-serif", fontSize: "15px", fontWeight: 400, color: "#fff", letterSpacing: "-0.02em" }}>{opt.label}</span>
-                        <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(117,117,117,0.9)", letterSpacing: "-0.01em", marginLeft: "8px" }}>{opt.desc}</span>
-                      </div>
-                    </label>
-                  ))}
+                  {SERVICE_OPTIONS.map((opt) => {
+                    const active = selectedServices.includes(opt.value);
+                    return (
+                      <label key={opt.value} style={radioStyle(active)} onClick={() => toggleService(opt.value)}>
+                        <span style={checkboxStyle(active)}>
+                          {active && (
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <path d="M2.5 6L5 8.5L9.5 3.5" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          )}
+                        </span>
+                        <div>
+                          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "15px", fontWeight: 400, color: "#fff", letterSpacing: "-0.02em" }}>{opt.label}</span>
+                          <span style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(117,117,117,0.9)", letterSpacing: "-0.01em", marginLeft: "8px" }}>{opt.desc}</span>
+                        </div>
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -286,6 +308,32 @@ export default function ProjectCalculator() {
                 }}>
                   Estimativa instantânea para você ter uma ideia de quanto pode economizar conosco.
                 </p>
+              </div>
+
+              {/* Selected services summary */}
+              <div style={{ marginBottom: "24px" }}>
+                <p style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", color: "rgba(117,117,117,0.9)", marginBottom: "10px", letterSpacing: "-0.01em" }}>
+                  {selectedServices.length > 1 ? `${selectedServices.length} serviços selecionados:` : "1 serviço selecionado:"}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                  {selectedServices.map((s) => {
+                    const opt = SERVICE_OPTIONS.find((o) => o.value === s);
+                    return (
+                      <span key={s} style={{
+                        fontFamily: "Geist Mono, monospace",
+                        fontSize: "11px",
+                        color: "rgba(255,255,255,0.7)",
+                        background: "rgba(255,255,255,0.06)",
+                        border: "1px solid rgba(255,255,255,0.1)",
+                        borderRadius: "6px",
+                        padding: "5px 12px",
+                        letterSpacing: "0.02em",
+                      }}>
+                        {opt?.label}
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "16px", flex: 1 }}>

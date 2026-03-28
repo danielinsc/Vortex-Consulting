@@ -10,13 +10,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background-color: #000;
   color: #fff;
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
 }
 
 /* Grain is handled by components/Grain.tsx (canvas-based, mix-blend-mode:screen) */

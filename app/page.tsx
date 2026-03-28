@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main style={{ background: '#000', overflowX: 'hidden' }}>
+    <main style={{ background: '#000', overflowX: 'clip' }}>
       {/* Grain removed — now only applied inside hero photo area */}
       <Navbar />
       <Hero />

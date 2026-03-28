@@ -7,7 +7,7 @@ const SECTIONS = [
     id: "consultoria",
     badge: "Consultoria",
     icon: "",
-    image: "/imagem-consultoria.png",
+    image: "/consultoriacorreto.jpg",
     title: "Sua estratégia de IA merece sair do slide e entrar em operação",
     description:
       "Antes de construir para você, construímos para nós. Mergulhamos nos seus processos, localizamos onde a IA gera valor de verdade e entregamos soluções prontas para escalar o seu negócio. Sem enrolação, sem teoria. Só resultado.",
@@ -19,7 +19,7 @@ const SECTIONS = [
     id: "produtos",
     badge: "Produtos",
     icon: "",
-    image: null,
+    image: "/produtosnovo.jpg",
     title: "Ferramentas que precisávamos, não encontramos. Então, criamos",
     description:
       "Desenvolvemos soluções para resolver nossos próprios desafios. Esse processo nos deu experiência prática que usamos para ensinar vibe coding e para construir aplicações reais para nossos clientes.",
@@ -31,7 +31,7 @@ const SECTIONS = [
     id: "educacao",
     badge: "Educação",
     icon: "",
-    image: null,
+    image: "/Icone-vortex-consultoria.jpg",
     title: "Chega de usar IA de forma amadora. Aprenda a usar como quem realmente domina.",
     description:
       "Fique à frente do mercado aprendendo na prática com quem usa e constrói com IA todos os dias. Sem jargão, sem teoria vazia.",
@@ -100,19 +100,23 @@ export default function Features() {
               {/* Icon / Image */}
               {section.image ? (
                 <div style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: "16px",
-                  overflow: "hidden",
+                  width: 200,
+                  height: 200,
                   flexShrink: 0,
+                  alignSelf: "center",
+                  background: "#000",
+                  borderRadius: "12px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}>
                   <Image
                     src={section.image}
                     alt={section.badge}
-                    width={128}
-                    height={128}
+                    width={400}
+                    height={400}
                     unoptimized
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", mixBlendMode: "lighten" }}
                   />
                 </div>
               ) : (

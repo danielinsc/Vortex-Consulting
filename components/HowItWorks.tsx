@@ -115,130 +115,85 @@ export default function HowItWorks() {
       <div className="section-container">
 
         {/* ── Consultoria Section ── */}
-        <div id="consultoria-detail" style={{ marginBottom: "160px" }}>
-          {/* Header */}
-          <div className="consult-header" style={{ marginBottom: "64px" }}>
-            <div style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "12px" }}>
-              <span style={{ fontSize: "20px" }}></span>
-              <span style={{
-                fontFamily: "Geist Mono, monospace",
-                fontSize: "12px",
-                color: "rgba(153,153,153,0.6)",
-                letterSpacing: "0.06em",
-              }}>
-                PÁGINA DE CONSULTORIA
-              </span>
-            </div>
+        <div id="consultoria-detail" className="consult-layout" style={{ marginBottom: "160px" }}>
 
-            <h2 className="h2-section" style={{ marginBottom: "20px", maxWidth: "700px" }}>
-              Sua estratégia de IA merece sair do papel e entrar em produção.
+          {/* LEFT — Title + CTA */}
+          <div className="consult-header consult-left">
+            <h2 className="h2-section" style={{ marginBottom: "20px", maxWidth: "420px" }}>
+              Processo simples,{" "}
+              <span style={{ color: "rgba(153,153,153,0.5)" }}>
+                resultados poderosos.
+              </span>
             </h2>
 
-            <p className="body-m" style={{ maxWidth: "640px" }}>
-              Antes de construir para você, construímos para nós. Mergulhamos fundo nos seus processos, identificamos onde a IA gera valor real e entregamos soluções funcionais para posicionar sua empresa na vanguarda da inteligência artificial.
+            <p className="body-m" style={{ maxWidth: "380px", marginBottom: "32px" }}>
+              Mergulhamos fundo nos seus processos, identificamos onde a IA gera valor real e entregamos soluções que posicionam sua empresa na vanguarda.
             </p>
-          </div>
 
-          {/* Subheading */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            marginBottom: "40px",
-          }}>
-            <div style={{
-              height: "1px",
-              width: "40px",
-              background: "linear-gradient(90deg, #999999, transparent)",
-              flexShrink: 0,
-            }} />
-            <p style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "14px",
-              color: "rgba(117,117,117,0.9)",
-              letterSpacing: "-0.01em",
+            <a href="#contato" className="btn-glass" style={{
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.15)",
             }}>
-              Como podemos ajudar. Três pilares para transformar sua empresa com inteligência artificial
-            </p>
+              Comece agora
+            </a>
           </div>
 
-          {/* 3 Pillars */}
-          <div className="pillars-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+          {/* RIGHT — Stacking cards on scroll */}
+          <div className="consult-right">
             {PILLARS.map((pillar, idx) => (
               <div
                 key={idx}
-                className="card-feature pillar-card"
+                className="pillar-card-sticky"
                 style={{
-                  padding: "36px 28px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
-                  position: "relative",
-                  overflow: "hidden",
+                  position: "sticky" as const,
+                  top: `calc(20vh + ${idx * 10}px)`,
+                  zIndex: idx + 1,
+                  background: "#0a0a0a",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "16px",
+                  padding: "40px 36px",
+                  display: "grid",
+                  gridTemplateColumns: "auto 1fr",
+                  gap: "24px",
+                  alignItems: "start",
                 }}
               >
-                {/* Top glow */}
-                <div style={{
-                  position: "absolute",
-                  top: "-30px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: "200px",
-                  height: "100px",
-                  background: `radial-gradient(ellipse, ${pillar.color}10 0%, transparent 70%)`,
+                {/* Large decorative number */}
+                <span style={{
+                  fontFamily: "Geist, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "120px",
+                  lineHeight: 0.85,
+                  color: "rgba(255,255,255,0.06)",
+                  letterSpacing: "-0.06em",
+                  userSelect: "none",
                   pointerEvents: "none",
-                }} />
+                }}>
+                  {pillar.number}
+                </span>
 
-                {/* Number + Icon */}
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span className="pillar-number" style={{
-                    fontFamily: "Geist Mono, monospace",
-                    fontWeight: 400,
-                    fontSize: "48px",
-                    color: `${pillar.color}25`,
-                    letterSpacing: "-0.04em",
-                    lineHeight: 1,
-                  }}>
-                    {pillar.number}
-                  </span>
-                  <div style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: "10px",
-                    background: `${pillar.color}12`,
-                    border: `1px solid ${pillar.color}30`,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "18px",
-                  }}>
-                    {pillar.icon}
-                  </div>
-                </div>
-
-                <div>
+                {/* Content */}
+                <div style={{ paddingTop: "4px" }}>
                   <h4 style={{
                     fontFamily: "Geist, sans-serif",
-                    fontWeight: 300,
-                    fontSize: "22px",
+                    fontWeight: 600,
+                    fontSize: "20px",
                     color: "#fff",
-                    letterSpacing: "-0.03em",
-                    marginBottom: "12px",
+                    letterSpacing: "-0.02em",
+                    marginBottom: "14px",
                   }}>
                     {pillar.title}
                   </h4>
-                  <p className="body-s" style={{ lineHeight: 1.6 }}>{pillar.description}</p>
+                  <p style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "15px",
+                    lineHeight: 1.7,
+                    color: "rgba(153,153,153,0.85)",
+                    letterSpacing: "-0.01em",
+                  }}>
+                    {pillar.description}
+                  </p>
                 </div>
-
-                {/* Bottom accent line */}
-                <div style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: "10%",
-                  right: "10%",
-                  height: "1px",
-                  background: `linear-gradient(90deg, transparent 0%, ${pillar.color}30 50%, transparent 100%)`,
-                }} />
               </div>
             ))}
           </div>
@@ -342,9 +297,41 @@ export default function HowItWorks() {
       </div>
 
       <style jsx>{`
+        .consult-layout {
+          display: grid;
+          grid-template-columns: 0.8fr 1.2fr;
+          gap: 60px;
+          align-items: start;
+        }
+
+        .consult-left {
+          position: sticky;
+          top: 25vh;
+        }
+
+        .consult-right {
+          display: block;
+        }
+
+        .pillar-card-sticky {
+          margin-bottom: 3vh;
+        }
+
+        .pillar-card-sticky:last-child {
+          margin-bottom: 3vh;
+        }
+
         @media (max-width: 809px) {
-          .pillars-grid {
+          .consult-layout {
             grid-template-columns: 1fr !important;
+            gap: 40px;
+          }
+          .consult-left {
+            position: static !important;
+          }
+          .pillar-card-sticky {
+            position: static !important;
+            margin-bottom: 20px !important;
           }
           .edu-grid {
             grid-template-columns: 1fr !important;
