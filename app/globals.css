@@ -281,3 +281,65 @@ body {
   .h1-hero    { font-size: 52px; }
   .h2-section { font-size: 34px; }
 }
+
+/* ─── DIAGNÓSTICO (/diagnostico) ─────────────────────────────────── */
+
+/* Inputs/selects/textarea — foco âmbar acessível */
+.diag-input:focus,
+.diag-input:focus-visible {
+  border-color: #FF6A1A !important;
+  box-shadow: 0 0 0 3px rgba(255, 106, 26, 0.15);
+}
+.diag-input::placeholder { color: rgba(184, 184, 184, 0.5); }
+
+/* Foco visível por teclado nos controles custom (radio/checkbox/botões) */
+.diag-radio:focus-within {
+  border-color: #FF6A1A !important;
+  box-shadow: 0 0 0 3px rgba(255, 106, 26, 0.12);
+}
+.diag-cta:focus-visible,
+.diag-success a:focus-visible {
+  outline: 2px solid #FF8C3A;
+  outline-offset: 3px;
+}
+.diag-radio:hover { border-color: rgba(255, 106, 26, 0.5) !important; }
+.diag-cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+/* Spinner do botão de envio */
+@keyframes diag-spin { to { transform: rotate(360deg); } }
+.diag-spinner { animation: diag-spin 0.7s linear infinite; }
+
+/* Entrada de cada passo */
+@keyframes diag-step-in {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.diag-step { animation: diag-step-in 0.45s cubic-bezier(0.12, 0.23, 0.28, 0.97); }
+
+/* Entrada do hero + sucesso */
+@keyframes diag-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.diag-hero { animation: diag-fade-up 1s cubic-bezier(0.12, 0.23, 0.17, 0.99) both; }
+.diag-success { animation: diag-fade-up 0.7s cubic-bezier(0.12, 0.23, 0.17, 0.99) both; }
+
+/* Check da tela de sucesso — desenha o traço */
+@keyframes diag-check-draw {
+  from { stroke-dashoffset: 60; }
+  to   { stroke-dashoffset: 0; }
+}
+.diag-check path {
+  stroke-dasharray: 60;
+  animation: diag-check-draw 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.15s both;
+}
+
+@media (max-width: 600px) {
+  .diag-hero h1 { font-size: 31px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diag-step, .diag-hero, .diag-success, .diag-check path, .diag-spinner {
+    animation: none !important;
+  }
+}
