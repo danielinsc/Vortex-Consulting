@@ -1,6 +1,7 @@
 "use server";
 
 import { computeScore, isPersonalEmail, type LeadClass } from "@/components/diagnostico/constants";
+import { getServerSupabase } from "@/lib/supabase/server";
 
 // ─── Payload enviado pelo formulário ────────────────────────────────────
 export type DiagnosticoInput = {
@@ -87,26 +88,53 @@ export async function submitDiagnostico(input: DiagnosticoInput): Promise<Diagno
   });
 
   const lead = {
-    ...input,
+    nome: input.nome.trim(),
     whatsapp: input.whatsapp.replace(/\D/g, ""),
+    email: input.email.trim(),
+    empresa: input.empresa.trim(),
+    nicho: input.nicho,
+    nicho_outro: input.nicho === "outro" ? input.nicho_outro?.trim() || null : null,
+    funcionarios: input.funcionarios,
+    faturamento_anual: input.faturamento_anual || null,
+    gargalo: input.gargalo,
+    gargalo_outro: input.gargalo === "outro" ? input.gargalo_outro?.trim() || null : null,
+    maturidade_ia: input.maturidade_ia,
+    tarefas_repetitivas: input.tarefas_repetitivas,
+    sistema_proprio: input.sistema_proprio,
+    urgencia: input.urgencia,
+    descricao: input.descricao?.trim() || null,
+    consent: input.consent,
     email_pessoal: isPersonalEmail(input.email),
     lead_score: score,
     lead_class: leadClass,
-    submitted_at: new Date().toISOString(),
+    // Atribuição / contexto
+    utm_source: input.utm_source || null,
+    utm_medium: input.utm_medium || null,
+    utm_campaign: input.utm_campaign || null,
+    utm_content: input.utm_content || null,
+    utm_term: input.utm_term || null,
+    fbclid: input.fbclid || null,
+    referrer: input.referrer || null,
+    page_variant: input.page_variant || null,
   };
 
-  // ─── TODO (configurar depois) ─────────────────────────────────────────
-  // 4. Persistir no Supabase:
-  //      const supabase = createServerClient()
-  //      const { error } = await supabase.from('leads').insert(lead)
-  //      if (error) return { ok: false, error: 'Não foi possível enviar. Tente de novo.' }
-  //
-  // 5. Notificar lead A (Resend):
-  //      if (leadClass === 'A') await sendLeadAlert(lead)
-  // ──────────────────────────────────────────────────────────────────────
+  // 4. Persistir no Supabase
+  try {
+    const supabase = getServerSupabase();
+    const { error: dbError } = await supabase.from("leads").insert(lead);
+    if (dbError) {
+      console.error("[diagnostico] erro ao salvar lead:", dbError.message);
+      return { ok: false, error: "Não foi possível enviar agora. Tente de novo em instantes." };
+    }
+  } catch (err) {
+    console.error("[diagnostico] exceção ao salvar lead:", err);
+    return { ok: false, error: "Não foi possível enviar agora. Tente de novo em instantes." };
+  }
 
-  // Por enquanto: log no servidor para validar o fluxo ponta a ponta.
-  console.log("[diagnostico] novo lead", { class: leadClass, score, empresa: lead.empresa });
+  console.log("[diagnostico] lead salvo", { class: leadClass, score, empresa: lead.empresa });
+
+  // ─── TODO: notificar lead A via Resend (configurar depois) ────────────
+  //   if (leadClass === "A") await sendLeadAlert(lead)
 
   return { ok: true, leadClass };
 }
