@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Configurar depois: definir NEXT_PUBLIC_FB_PIXEL_ID no .env.local
+// Definido por NEXT_PUBLIC_FB_PIXEL_ID (.env.local + Vercel). Sem ele, o pixel não carrega.
 const PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
 
 export default function DiagnosticoLayout({ children }: { children: React.ReactNode }) {
