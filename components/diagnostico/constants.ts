@@ -62,6 +62,13 @@ export const TAREFAS_OPTIONS: Option[] = [
   { value: "nao-sei", label: "Não sei estimar" },
 ];
 
+export const SISTEMA_PROPRIO_OPTIONS: Option[] = [
+  { value: "quero-proprio", label: "Sim — quero parar de depender de ferramentas de terceiros" },
+  { value: "avaliando", label: "Talvez — depende do custo e do retorno" },
+  { value: "ja-proprio", label: "Já temos sistema próprio sob medida" },
+  { value: "satisfeito", label: "Não — as ferramentas atuais já atendem bem" },
+];
+
 export const URGENCIA_OPTIONS: Option[] = [
   { value: "agora", label: "O quanto antes — é prioridade agora" },
   { value: "3-meses", label: "Próximos 3 meses" },
@@ -83,6 +90,9 @@ const URGENCIA_SCORE: Record<string, number> = {
 const MATURIDADE_SCORE: Record<string, number> = {
   "nada": 1, "ferramentas-soltas": 2, "projeto-falhou": 3, "ja-rodando": 2,
 };
+const SISTEMA_PROPRIO_SCORE: Record<string, number> = {
+  "quero-proprio": 4, "avaliando": 2, "ja-proprio": 1, "satisfeito": 0,
+};
 
 export type LeadClass = "A" | "B" | "C";
 
@@ -91,14 +101,16 @@ export function computeScore(input: {
   faturamento_anual?: string;
   urgencia: string;
   maturidade_ia: string;
+  sistema_proprio: string;
 }): { score: number; leadClass: LeadClass } {
   const score =
     (FUNCIONARIOS_SCORE[input.funcionarios] ?? 0) +
     (FATURAMENTO_SCORE[input.faturamento_anual ?? "nao-informar"] ?? 1) +
     (URGENCIA_SCORE[input.urgencia] ?? 0) +
-    (MATURIDADE_SCORE[input.maturidade_ia] ?? 0);
+    (MATURIDADE_SCORE[input.maturidade_ia] ?? 0) +
+    (SISTEMA_PROPRIO_SCORE[input.sistema_proprio] ?? 0);
 
-  const leadClass: LeadClass = score >= 10 ? "A" : score >= 6 ? "B" : "C";
+  const leadClass: LeadClass = score >= 12 ? "A" : score >= 7 ? "B" : "C";
   return { score, leadClass };
 }
 

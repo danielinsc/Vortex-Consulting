@@ -4,7 +4,7 @@ import { submitDiagnostico, type DiagnosticoInput } from "@/app/diagnostico/acti
 import {
   AMBER, AMBER_2, AMBER_GRADIENT, TRANSITION,
   NICHO_OPTIONS, FUNCIONARIOS_OPTIONS, FATURAMENTO_OPTIONS,
-  GARGALO_OPTIONS, MATURIDADE_OPTIONS, TAREFAS_OPTIONS, URGENCIA_OPTIONS,
+  GARGALO_OPTIONS, MATURIDADE_OPTIONS, TAREFAS_OPTIONS, SISTEMA_PROPRIO_OPTIONS, URGENCIA_OPTIONS,
   maskPhone, phoneDigits,
 } from "./constants";
 import { Field, TextInput, TextArea, Select, RadioGroup, Checkbox } from "./ui";
@@ -18,7 +18,7 @@ type FormState = Record<string, string | boolean>;
 const initialState: FormState = {
   nome: "", whatsapp: "",
   email: "", empresa: "", nicho: "", nicho_outro: "", funcionarios: "", faturamento_anual: "",
-  gargalo: "", gargalo_outro: "", maturidade_ia: "", tarefas_repetitivas: "",
+  gargalo: "", gargalo_outro: "", maturidade_ia: "", tarefas_repetitivas: "", sistema_proprio: "",
   urgencia: "", descricao: "", consent: false,
   website: "", // honeypot
 };
@@ -88,6 +88,7 @@ export default function DiagnosticoForm() {
       if (val("gargalo") === "outro" && !val("gargalo_outro").trim()) e.gargalo_outro = "Descreva a área";
       if (!val("maturidade_ia")) e.maturidade_ia = "Selecione uma opção";
       if (!val("tarefas_repetitivas")) e.tarefas_repetitivas = "Selecione uma opção";
+      if (!val("sistema_proprio")) e.sistema_proprio = "Selecione uma opção";
     }
     if (s === 4) {
       if (!val("urgencia")) e.urgencia = "Selecione uma opção";
@@ -125,6 +126,7 @@ export default function DiagnosticoForm() {
       gargalo_outro: val("gargalo") === "outro" ? val("gargalo_outro").trim() : undefined,
       maturidade_ia: val("maturidade_ia"),
       tarefas_repetitivas: val("tarefas_repetitivas"),
+      sistema_proprio: val("sistema_proprio"),
       urgencia: val("urgencia"),
       descricao: val("descricao").trim() || undefined,
       consent: state.consent === true,
@@ -282,6 +284,12 @@ export default function DiagnosticoForm() {
                   <Select id="tarefas_repetitivas" value={val("tarefas_repetitivas")} error={!!errors.tarefas_repetitivas}
                     placeholder="Selecione" options={TAREFAS_OPTIONS}
                     onChange={set("tarefas_repetitivas")} />
+                </Field>
+                <Field id="sistema_proprio"
+                  label="Hoje você depende de softwares de terceiros para CRM, ERP e gestão de tarefas. Faria sentido ter sistemas próprios, sob medida da sua operação?"
+                  error={errors.sistema_proprio}>
+                  <RadioGroup name="sistema_proprio" value={val("sistema_proprio")}
+                    onChange={set("sistema_proprio")} options={SISTEMA_PROPRIO_OPTIONS} />
                 </Field>
               </>
             )}

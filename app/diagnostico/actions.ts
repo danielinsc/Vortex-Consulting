@@ -19,6 +19,7 @@ export type DiagnosticoInput = {
   gargalo_outro?: string;
   maturidade_ia: string;
   tarefas_repetitivas: string;
+  sistema_proprio: string;
   // Passo 4
   urgencia: string;
   descricao?: string;
@@ -53,6 +54,7 @@ function validate(input: DiagnosticoInput): string | null {
     ["gargalo", "Selecione a área que mais trava"],
     ["maturidade_ia", "Selecione a maturidade em IA"],
     ["tarefas_repetitivas", "Selecione o volume de tarefas repetitivas"],
+    ["sistema_proprio", "Selecione o interesse em sistemas próprios"],
     ["urgencia", "Selecione a urgência"],
   ];
   for (const [field, msg] of required) {
@@ -81,6 +83,7 @@ export async function submitDiagnostico(input: DiagnosticoInput): Promise<Diagno
     faturamento_anual: input.faturamento_anual,
     urgencia: input.urgencia,
     maturidade_ia: input.maturidade_ia,
+    sistema_proprio: input.sistema_proprio,
   });
 
   const lead = {
